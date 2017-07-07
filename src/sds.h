@@ -41,6 +41,10 @@
 
 typedef char *sds;
 
+/* sunweinan's note
+__attribute__ ((__packed__)) tells compiler no padding for this struct
+char buf[] is a flexible array member, doesn't contribute to sizeof(). */
+
 /* Note: sdshdr5 is never used, we just access the flags byte directly.
  * However is here to document the layout of type 5 SDS strings. */
 struct __attribute__ ((__packed__)) sdshdr5 {
